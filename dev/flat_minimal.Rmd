@@ -1,0 +1,100 @@
+---
+title: "flat_minimal.Rmd empty"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+library(glue)
+```
+
+<!--
+ You need to run the 'description' chunk in the '0-dev_history.Rmd' file before continuing your code there.
+-->
+
+# Say hello to someone
+
+You can say hello to someone in particular using `say_hello()`.
+
+```{r development-1}
+# exploration
+someone <- "Berra"
+message(glue('Hello {someone}'))
+```
+
+
+```{r function-say_hello}
+#' Say hello to someone
+#'
+#' @param someone Character. The name of the person you want to say hello to
+#'
+#' @return Side effect: A message in the console
+#' 
+#' @importFrom glue glue
+#' 
+#' @export
+#'
+#' @examples
+say_hello <- function(someone = "Berra") {
+  text <- glue('Hello {someone}')
+  message(text)
+  return(text)
+}
+```
+
+```{r examples-say_hello}
+say_hello() # Hello Berra
+say_hello(someone = "Seb") # Hello Seb
+
+hello_anna <- say_hello(someone = "Anna") 
+hello_anna
+# library(ggplot2)
+# ggplot() + geom_point()
+```
+
+```{r tests-say_hello}
+# library(ggplot2)
+# ggplot() + geom_point()
+
+test_that("say_hello works", {
+  expect_message(say_hello(), regexp = "Hello Berra")
+  expect_message(say_hello(someone = "Seb"), "Hello Seb")
+  # test the output
+  hello_anna <- say_hello(someone = "Anna") 
+  expect_equal(hello_anna, "Hello Anna")
+})
+```
+
+## say_goodbye
+    
+```{r function-say_goodbye}
+#' Title
+#' 
+#' Description
+#' 
+#' @return
+#' 
+#' @export
+say_goodbye <- function(){
+    
+}
+```
+  
+```{r example-say_goodbye}
+say_goodbye()
+```
+  
+```{r tests-say_goodbye}
+test_that("say_goodbye works", {
+  expect_true(inherits(say_goodbye, "function")) 
+})
+```
+  
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(flat_file = "dev/flat_minimal.Rmd", vignette_name = "Minimal", check = FALSE)
+```
