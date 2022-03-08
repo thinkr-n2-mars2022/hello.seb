@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # hello
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/thinkr-n2-mars2022/hello.seb/workflows/R-CMD-check/badge.svg)](https://github.com/thinkr-n2-mars2022/hello.seb/actions)
 <!-- badges: end -->
 
 A set of functions to be polite with our colleagues and friends.

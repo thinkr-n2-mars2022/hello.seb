@@ -35,6 +35,8 @@ usethis::use_proprietary_license("ThinkR")
 usethis::use_git()
 # Deal with classical files to ignore
 usethis::git_vaccinate()
+# Github
+usethis::use_github(organisation = "thinkr-n2-mars2022", private = FALSE)
 ```
 
 # Set extra sources of documentation

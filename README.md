@@ -4,6 +4,8 @@
 # hello
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/thinkr-n2-mars2022/hello.seb/workflows/R-CMD-check/badge.svg)](https://github.com/thinkr-n2-mars2022/hello.seb/actions)
 <!-- badges: end -->
 
 A set of functions to be polite with our colleagues and friends.
@@ -33,13 +35,15 @@ You can say hello to someone in particular using `say_hello()`.
 ``` r
 say_hello() # Hello Berra
 #> Hello Berra
+#> Hello Berra
 say_hello(someone = "Seb") # Hello Seb
+#> Hello Seb
 #> Hello Seb
 
 hello_anna <- say_hello(someone = "Anna") 
 #> Hello Anna
 hello_anna
-#> NULL
+#> Hello Anna
 # library(ggplot2)
 # ggplot() + geom_point()
 ```
